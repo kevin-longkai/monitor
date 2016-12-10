@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>注册</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+</head>
+<body ontouchstart="" class="bg_gray">
+<section id="container" class="viewport jc_box">
+  <header class="log_top">
+    <em></em>注册
+  </header>
+  <div class="login_item">
+    <div class="login_in">
+      <span>用户名</span><input type="text" placeholder="请输入账号或手机号" />
+    </div>
+    <div class="login_in">
+      <span>手机号</span><input type="text" placeholder="请输入手机号" />
+    </div>
+    <div class="login_in" id="mima">
+      <span>密&nbsp;&nbsp;&nbsp;&nbsp;码</span><input type="password" placeholder="请输入6-18位密码" />
+    </div>
+  </div>
+  <div class="login_item">
+    <div class="login_in">
+      <span>所在地区</span><input type="text" placeholder="选择所在地区" />
+    </div>
+  </div>
+  <div class="zcty"><p></p>我已阅读并同意《易牙美用户使用协议》</div>
+  <button class="login_btn" disabled="disabled">注册</button>
+</section>
+
+<script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  $(function(){
+    $(".zcty").on("click",function(){
+      if(!$(this).find("p").hasClass("cur")){
+        $(".zcty").find("p").addClass("cur");
+        $(".login_btn").removeAttr("disabled");
+      }else{
+        $(".zcty").find("p").removeClass("cur");
+        $(".login_btn").attr("disabled","disabled");
+      }
+    })
+  })
+</script>
+</body>
+</html>

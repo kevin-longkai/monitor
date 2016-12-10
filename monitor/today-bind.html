@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>监测-绑定后</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+</head>
+<body ontouchstart="" class="bg_gray">
+<section id="container" class="viewport">
+  <header class="jr_top"><em></em>记录历史</header>
+  <div class="jr_item">
+    <div class="bzjl">
+      <span></span>
+      <span></span>
+      <span class="cur"></span>
+      <span class="cur"></span>
+      <span></span>
+      <span></span>
+      <span class="cur"></span>
+      <p class="bzjl_txt">本周记录情况</p>
+    </div>
+    <div class="rib_item clearfix">
+      <p class="cur">日</p>
+      <p>周</p>
+      <p>月</p>
+      <p>总</p>
+    </div>
+    <p class="jrjl_zd">今日（11月9日），震动记录</p>
+    <p class="jl_timer">0<sub>分钟</sub></p>
+    <div class="jl_num clearfix">
+      <div>
+        <p>震动次数</p>
+        <p class="jlTT">0<sub>次</sub></p>
+      </div>
+      <div>
+        <p>今日萌芽</p>
+        <p class="jlTT">0<sub>颗</sub></p>
+      </div>
+    </div>
+    <div id="canvasMain"></div>
+  </div>
+  <div class="jr_item clearfix">
+    <div class="jr_info">
+      <img src="../images/img.jpg" alt="" class="jr_img"/>
+      <div class="jrr_txt">
+        <p class="jrr_tt">虾米jelly</p>
+        <p class="jrr_tt2"><span>2016-11-07</span><em>性别：女</em>年龄：3岁</p>
+      </div>
+    </div>
+    <div class="jl_tab">
+      <div class="jl_top clearfix">
+        <div>
+          <p class="jl_tit">22</p>
+          <p>震动次数</p>
+        </div>
+        <div>
+          <p class="jl_tit">1</p>
+          <p>萌芽个数</p>
+        </div>
+        <div>
+          <p class="jl_tit">1</p>
+          <p>牙齿掉落</p>
+        </div>
+      </div>
+      <p class="jl_bTxt">监测记录共26天，<a href="#">点击查看详情</a></p>
+    </div>
+  </div>
+
+  <div class="jr_item clearfix">
+    <div class="jr_info">
+      <img src="../images/img.jpg" alt="" class="jr_img"/>
+      <div class="jrr_txt">
+        <p class="jrr_tt">虾米jelly</p>
+        <p class="jrr_tt2"><span>2016-11-07</span><em>性别：女</em>年龄：3岁</p>
+      </div>
+    </div>
+    <div class="jl_tab">
+      <div class="jl_top clearfix">
+        <div>
+          <p class="jl_tit">22</p>
+          <p>震动次数</p>
+        </div>
+        <div>
+          <p class="jl_tit">1</p>
+          <p>萌芽个数</p>
+        </div>
+        <div>
+          <p class="jl_tit">1</p>
+          <p>牙齿掉落</p>
+        </div>
+      </div>
+      <p class="jl_bTxt">监测记录共26天，<a href="#">点击查看详情</a></p>
+    </div>
+  </div>
+</section>
+<script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+window.onload=function(){
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('canvasMain'));
+  option = {
+    color: ['#5fc7bc'],
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        },
+        show:false
+    },
+    grid: {
+        left: '10px',
+        right: '4%',
+        bottom: '17px',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['11/4', '11/5', '11/6', '11/7', '11/8', '11/9', '今日'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value'
+        }
+    ],
+    series : [
+        {
+            name:'直接访问',
+            type:'bar',
+            barWidth: '55%',
+            data:[0, 0, 200, 334, 0, 0, 0]
+        }
+    ]
+  };
+  myChart.setOption(option);
+}
+</script>
+</body>
+</html>
