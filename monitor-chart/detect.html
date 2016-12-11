@@ -145,6 +145,14 @@ window.onload=function(){
   });
 
 }
+
+  try {
+        var tmp = JSON.parse(YYM.getToken())
+        alert(tmp);
+      }
+      catch (err) {
+        return ''
+   }
 </script>
 </body>
 </html>
