@@ -145,6 +145,9 @@ window.onload=function(){
   });
 
   alert('123123123');
+  if (typeof(YYM) == 'underfined') {
+     alert('underfined');
+  }
   try {
         var tmp = JSON.parse(YYM.getToken())
         alert(tmp);
