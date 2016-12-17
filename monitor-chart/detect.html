@@ -143,19 +143,7 @@ window.onload=function(){
           }]
       });
   });
-
-  if (typeof YYM == 'underfined') {
-     alert('underfined');
-  } else {
-     alert(YYM);
-  }
-  try {
-        var tmp = JSON.parse(YYM.getToken())
-        alert(tmp);
-      }
-      catch (err) {
-        return ''
-   }
+  alert(YYM.getToken());
 }
 
   
