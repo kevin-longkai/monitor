@@ -93,9 +93,13 @@ window.onload = function(){
 function getConnectBlueDevice() {
    YYM.connectBluetooth();
 }
-function changeButtonStatus()
+function changeButtonStatus(status)
 {
+  if (status == 1) {
    $("#yydt_t2").text("已绑定蓝牙设备");
+  } else {
+    $("#yydt_t2").text("绑定失败");
+  }
 }
 </script>
 </body>
