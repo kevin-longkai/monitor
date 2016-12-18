@@ -84,14 +84,19 @@ window.onload = function(){
   }
   draw();
   re_loop = setInterval(draw,2000);
-  setTimeout(getData, "2000");
+
+  $("#connect").on("click", function (){
+       getConnectBlueDevice();
+  })
 }
 
-$(function() {
-    $("#connect").on("click", function (){
-       getConnectBlueDevice();
-    })
-})
+function getConnectBlueDevice() {
+   YYM.connectBluetooth();
+}
+function changeButtonStatus()
+{
+  alert(1111);
+}
 </script>
 </body>
 </html>
