@@ -17,7 +17,7 @@
       <div class="yydt_in">
         <img src="../images/yImg.jpg" alt="" class="yydt_img"/>
         <p class="yydt_ttx">萌第3颗上乳中切牙</p>
-        <p class="yydt_t2">未绑定震动仪</p>
+        <p class="yydt_t2" id="yydt_t2">未绑定震动仪</p>
       </div>
     </div>
   </header>
@@ -95,7 +95,7 @@ function getConnectBlueDevice() {
 }
 function changeButtonStatus()
 {
-  alert(1111);
+   $("#yydt_t2").text("已绑定蓝牙设备");
 }
 </script>
 </body>
