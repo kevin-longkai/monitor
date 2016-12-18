@@ -143,13 +143,24 @@ window.onload=function(){
           }]
       });
   });
-setTimeout(getData, "2000");
+
+  Polling();
 }
- function getData()
+
+function Polling()
 {
-   var a = YYM.getToken();
-   var tmp = JSON.parse(a);
-   alert(tmp.appID);
+  //进来首次调用
+  getData();
+  setInterval("getData()", 1000);
+}
+
+function getData()
+{
+  var arr = new Array();
+  var json = YYM.getInstantData();
+  if (json != '') {
+    arr.push(JSON.parse(json));
+  }
 }
 </script>
 </body>
