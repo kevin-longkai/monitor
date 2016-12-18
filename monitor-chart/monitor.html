@@ -143,7 +143,13 @@ window.onload=function(){
           }]
       });
   });
-
+setTimeout(getData, "2000");
+}
+ function getData()
+{
+   var a = YYM.getToken();
+   var tmp = JSON.parse(a);
+   alert(tmp.appID);
 }
 </script>
 </body>

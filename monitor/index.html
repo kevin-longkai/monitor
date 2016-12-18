@@ -13,7 +13,7 @@
   <header class="jc_top">
     <p class="jrdt_t" onclick="location='/monitor/monitor-chart/monitor.html'">今日动态</p>
     <p class="zxys"><a href="#">咨询医生</a></p>
-    <div class="yydt">
+    <div class="yydt" id="connect">
       <div class="yydt_in">
         <img src="../images/yImg.jpg" alt="" class="yydt_img"/>
         <p class="yydt_ttx">萌第3颗上乳中切牙</p>
@@ -33,6 +33,8 @@
 </section>
 <script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
 <script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery_last.js"></script>
+<script src="../js/monitor.js"></script>
 <script type="text/javascript">
 window.onload = function(){
   var canvas = document.getElementById("canvas");
@@ -82,8 +84,14 @@ window.onload = function(){
   }
   draw();
   re_loop = setInterval(draw,2000);
+  setTimeout(getData, "2000");
 }
 
+$(function() {
+    $("#connect").on("click", function (){
+       getConnectBlueDevice();
+    })
+})
 </script>
 </body>
 </html>
