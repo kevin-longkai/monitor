@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>我的设备</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta content="telephone=no" name="format-detection" />
+<link rel="stylesheet" type="text/css" href="../css/base.css" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css" />
+</head>
+<body ontouchstart="" class="bg_gray">
+<section id="container" class="viewport">
+  <header class="log_top">
+    <em></em>我的设备
+  </header>
+  <div class="eq_item">
+    <div class="wave_box"><canvas id="demo-1" style="demo"></canvas></div>
+    <div class="eq_sz clearfix">
+      <a href="#"><em></em>个性化设置</a>
+      <a href="#"><em class="eq_sz2"></em>提醒设置</a>
+    </div>
+  </div>
+  <div class="eq_item eq_cdata">
+    <h2>存储数据</h2>
+    <p class="sj"><span>8h</span>昨日佩戴时间</p>
+    <p class="wd"><span>34℃</span>昨日平均温度</p>
+  </div>
+  <a href="#" class="eq_cunchu">存储设备数据</a>
+</section>
+<script src="../js/jquery_last.js" type="text/javascript" charset="utf-8"></script> 
+<script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/waterbubble.min.js"></script>
+<script>
+  $('#demo-1').waterbubble({data:.6,txt: '60%电量',});
+</script>
+</body>
+</html>

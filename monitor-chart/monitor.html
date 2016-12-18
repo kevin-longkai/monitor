@@ -10,7 +10,7 @@
 </head>
 <body ontouchstart="" class="bg_gray">
 <section id="container" class="viewport">
-  <header class="jr_top"><em></em>设备信息<p class="jc_ic"></p></header>
+  <header class="jr_top"><a href="/monitor/monitor/index.html"><em></em></a>设备信息<p class="jc_ic"></p></header>
   <div class="jct_item clearfix">
     <div class="jr_info">
       <img src="../images/img.jpg" alt="" class="jr_img"/>
@@ -24,11 +24,11 @@
   </div>
   <div class="jct_item">
     <div class="jct_iwd clearfix">
-      <div>
+      <div  onclick="location='/monitor/monitor/history.html'">
         <p class="jcTT">解读曲线</p>
         <p>公立医院医生快速解答</p>
       </div>
-      <div>
+      <div  onclick="location='/monitor/doctors/list.html'">
         <p class="jcTT">咨询医生</p>
         <p>1元钱，名医任你挑选</p>
       </div>
@@ -143,10 +143,8 @@ window.onload=function(){
           }]
       });
   });
-  alert(YYM.getToken());
-}
 
-  
+}
 </script>
 </body>
 </html>
