@@ -1,167 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<title>监测数据图</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<meta content="telephone=no" name="format-detection" />
-<link rel="stylesheet" type="text/css" href="../css/base.css" />
-<link rel="stylesheet" type="text/css" href="../css/demo.css" />
-</head>
-<body ontouchstart="" class="bg_gray">
-<section id="container" class="viewport">
-  <header class="jr_top"><a href="/monitor/monitor/index.html"><em></em></a>设备信息<p class="jc_ic"></p></header>
-  <div class="jct_item clearfix">
-    <div class="jr_info">
-      <img src="../images/img.jpg" alt="" class="jr_img"/>
-      <div class="jrr_txt">
-        <p class="jrr_tt">虾米jelly</p>
-        <p class="jrr_tt2"><span>2016-11-07</span><em class="zdIc">震动时间：25分钟</em></p>
-      </div>
-    </div>
-    <p class="data_text"><span>共记录1天</span>温度（℃）</p>
-    <div id="dataImg"></div>
-  </div>
-  <div class="jct_item">
-    <div class="jct_iwd clearfix">
-      <div  onclick="location='/monitor/monitor/history.html'">
-        <p class="jcTT">解读曲线</p>
-        <p>公立医院医生快速解答</p>
-      </div>
-      <div  onclick="location='/monitor/doctors/list.html'">
-        <p class="jcTT">咨询医生</p>
-        <p>1元钱，名医任你挑选</p>
-      </div>
-    </div>
-  </div>
-</section>
-<script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
-<script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-window.onload=function(){
-  // 基于准备好的dom，初始化echarts实例
-  var myChart = echarts.init(document.getElementById('dataImg'));
-  myChart.showLoading();
-  $.getJSON('confidence-band.json', function (data) {
-      myChart.hideLoading();
+    <head>
+        <meta charset="utf-8">
+        <title>监测数据图</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="../css/base.css" />
+        <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+    </head>
+    <body ontouchstart="" class="bg_gray">
+        <section id="container" class="viewport">
+            <header class="jr_top"><em onclick="location='/monitor/monitor/index.html'"></em>设备信息<p class="jc_ic"></p></header>
+            <div class="jct_item clearfix">
+                <div class="jr_info">
+                    <img src="../images/img.jpg" alt="" class="jr_img"/>
+                    <div class="jrr_txt">
+                        <p class="jrr_tt">虾米jelly</p>
+                        <p class="jrr_tt2"><span>2016-11-07</span><em class="zdIc">震动时间：25分钟</em></p>
+                    </div>
+                </div>
+                <p class="data_text"><!--<span>共记录1天</span>温度（℃）--></p>
+                <div id="dataImg"></div>
+            </div>
+            <div class="jct_item">
+                <div class="jct_iwd clearfix">
+                    <div>
+                        <p class="jcTT">解读曲线</p>
+                        <p>公立医院医生快速解答</p>
+                    </div>
+                    <div>
+                        <p class="jcTT">咨询医生</p>
+                        <p>1元钱，名医任你挑选</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
+        <script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            var myChart = echarts.init(document.getElementById('dataImg'));
+            //X轴初始最大次数
+            var initXmax = 30;
+            var initXmin = 0;
+            function randomData(start) {
+                initTime++;
+                //value即温度
+                var value = parseInt(Math.random() * (37 - 32 + 1) + 32, 10);
+                return {
+                    name: start,
+                    value: [
+                        start,
+                        Math.round(value)
+                    ]
+                }
+            }
 
-      var base = -data.reduce(function (min, val) {
-          return Math.floor(Math.min(min, val.l));
-      }, Infinity);
-      myChart.setOption(option = {
-          title: {
-              text: '当日佩戴的口腔温度',
-              left: 'center'
-          },
-          tooltip: {
-              trigger: 'axis',
-              axisPointer: {
-                  animation: false
-              },
-              formatter: function (params) {
-                  return params[2].name + '<br />' + params[2].value;
-              }
-          },
-          grid: {
-              left: '3%',
-              right: '4%',
-              bottom: '3%',
-              containLabel: true
-          },
-          xAxis: {
-              type: 'category',
-              data: data.map(function (item) {
-                  return item.date;
-              }),
-              axisLabel: {
-                  formatter: function (value, idx) {
-                      var date = new Date(value);
-                      return idx === 0 ? value : [date.getMonth() + 1, date.getDate()].join('-');
-                  }
-              },
-              splitLine: {
-                  show: false
-              },
-              boundaryGap: false
-          },
-          yAxis: {
-              axisLabel: {
-                  formatter: function (val) {
-                      return (val - base) ;
-                  }
-              },
-              splitNumber: 3,
-              splitLine: {
-                  show: false
-              }
-          },
-          series: [{
-              name: 'L',
-              type: 'line',
-              data: data.map(function (item) {
-                  return item.l + base;
-              }),
-              lineStyle: {
-                  normal: {
-                      opacity: 0
-                  }
-              },
-              stack: 'confidence-band',
-              symbol: 'none'
-          }, {
-              name: 'U',
-              type: 'line',
-              data: data.map(function (item) {
-                  return item.u - item.l;
-              }),
-              lineStyle: {
-                  normal: {
-                      opacity: 0
-                  }
-              },
-              areaStyle: {
-                  normal: {
-                      color: '#ededed'
-                  }
-              },
-              stack: 'confidence-band',
-              symbol: 'none'
-          }, {
-              type: 'line',
-              data: data.map(function (item) {
-                  return item.value + base;
-              }),
-              hoverAnimation: false,
-              symbolSize: 6,
-              itemStyle: {
-                  normal: {
-                      color: '#e25650'
-                  }
-              },
-              showSymbol: false
-          }]
-      });
-  });
+            var data = [];
+            var initTime = 0
 
-  Polling();
-}
+            // 指定图表的配置项和数据
+            option = {
+                title: {
+                    text: '当前佩戴的口腔温度，采样频率：10秒',
+                    left: 'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: function (params) {
+                        params = params[0];
+                        return params.name;
+                    },
+                    axisPointer: {
+                        animation: true
+                    }
+                },
+                xAxis: {
+                    name: '次',
+                    type: 'value',
+                    min: initXmin,
+                    max: initXmax,
+                    splitLine: {
+                        show: false
+                    }
+                },
+                yAxis: {
+                    name: '温度',
+                    type: 'value',
+                    min: 0,
+                    max: 50,
+                    splitLine: {
+                        show: false
+                    }
+                },
+                series: [{
+                        name: '模拟数据',
+                        type: 'line',
+                        showSymbol: false,
+                        hoverAnimation: false,
+                        data: data
+                    }]
+            };
+            myChart.setOption(option);
+            //定时采样数据
+            setInterval(function () {
+                console.log(initTime);
+                var x_max = initTime >= initXmax ? initTime : initXmax;
+                var x_min = initTime >= initXmax ? initXmin + (initTime-initXmax) : initXmin;
+                //initTime >= initXmax ? data.shift() : "";
+                data.push(randomData(initTime));
 
-function Polling()
-{
-  //进来首次调用
-  getData();
-  setInterval("getData()", 1000);
-}
-
-function getData()
-{
-  var arr = new Array();
-  var json = YYM.getInstantData();
-  if (json != '') {
-    arr.push(JSON.parse(json));
-  }
-}
-</script>
-</body>
+                myChart.setOption({
+                    xAxis: {
+                        min: x_min,
+                        max: x_max
+                    },
+                    series: [{
+                            data: data,
+                        }]
+                });
+            }, 1000);
+        </script>
+    </body>
 </html>

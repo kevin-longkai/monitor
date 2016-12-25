@@ -11,7 +11,7 @@
 <body ontouchstart="" class="bg_gray">
 <section id="container" class="viewport">
   <header class="log_top">
-    <em></em>我的设备
+    <em  onclick="location='/monitor/monitor-chart/monitor.html'"></em>我的设备
   </header>
   <div class="eq_item">
     <div class="wave_box"><canvas id="demo-1" style="demo"></canvas></div>
@@ -32,7 +32,20 @@
 <script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/waterbubble.min.js"></script>
 <script>
-  $('#demo-1').waterbubble({data:.1,txt: '60%电量',});
+$(function(){
+  setTimeout("getElectricity()", 2000);
+})
+function getElectricity()
+{
+   var electricity = YYM.getDeviceElectricity();
+   JSON.parse(electricity);
+   var float_elec = '0.99';
+   var float_bfb  = float_elec * 100;
+
+  $('#demo-1').waterbubble({data:float_elec,txt: float_bfb + '电量',});
+}
+
+  $('#demo-1').waterbubble({data:.10,txt: '10%电量',});
 </script>
 </body>
 </html>
