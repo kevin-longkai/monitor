@@ -10,7 +10,6 @@ body {
   margin: 0;
   font-family: "微软雅黑";
   padding: 0;
-  padding-top:30px;
   background: #fff;
 }
 .viewport {
@@ -375,3 +374,14 @@ z-index: 2;}
 .cale_btm{height: 1rem;background: #fff;position: fixed;z-index: 99;width: 100%;}
 .cale_btm>p{width: .62rem;height: .63rem;margin: .19rem auto 0 auto;background-position:-.79rem -4.38rem;}
 .wave_box{width:206px;height:206px;padding: .8rem 0 .6rem;margin: 0 auto;}
+
+.viewport:before{content: "";height: 20px;display: block;width: 100%;background: #fff;}
+.viewport.bg2:before{background: #5fc7bb;}
+.viewport.bg3:before{background: #f8f8f8;}
+.viewport.bg4:before{background:#897e78;}
+.viewport.bg1:before{background: linear-gradient(left , #43c1c0 1% , #00777b 100%);
+background: -o-linear-gradient(left , #43c1c0 1% , #00777b 100%);
+background: -ms-linear-gradient(left , #43c1c0 1% , #00777b 100%);
+background: -moz-linear-gradient(left , #43c1c0 1% , #00777b 100%);
+background: -webkit-linear-gradient(left , #43c1c0 1% , #00777b 100%);
+}
