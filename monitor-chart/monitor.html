@@ -35,7 +35,7 @@
                 </div>
             </div>
         </section>
-        <script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script> 
+        <script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
         <script type="text/javascript">
@@ -46,12 +46,12 @@
             function randomData(start) {
                 initTime++;
                 //value即温度
-                var value = parseInt(Math.random() * (37 - 32 + 1) + 32, 10);
+                var value = getInstantData();
                 return {
                     name: start,
                     value: [
                         start,
-                        Math.round(value)
+                        value
                     ]
                 }
             }
@@ -120,6 +120,12 @@
                         }]
                 });
             }, 1000);
+
+            function getInstantData(){
+                var jsonData = YYM.getInstantData();
+                var obj = eval(jsonData);
+                return obj.temperature;
+            }
         </script>
     </body>
 </html>
