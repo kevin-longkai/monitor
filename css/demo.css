@@ -36,7 +36,7 @@ body {
 .xdsoft_datetimepicker  .xdsoft_mounthpicker:before,.eq_cdata > p:after,.eq_cdata h2:after,.grjj_c>div h2:after,.hpl_top:before,.sqfy_in:before,.doc_iBtm:after,.mcjcrw:after,.mc_jl:after,.jr_top:after,.log_top:after,.login_in:after,.forget_box:after{background-image: -webkit-linear-gradient(top, #ddd, #ddd 0%, transparent 0%),
         -webkit-linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
         -webkit-linear-gradient(bottom, #ddd, #ddd 60%, transparent 60%),
-        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);
+        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);  
     background-image: linear-gradient(top, #ddd, #ddd 0%, transparent 0%),
         linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
        linear-gradient(bottom, #ddd, #ddd 60%, transparent 60%),
@@ -47,17 +47,17 @@ body {
   background-image: -webkit-linear-gradient(top, #ddd, #ddd 60%, transparent 60%),
         -webkit-linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
         -webkit-linear-gradient(bottom, #ddd, #ddd 0%, transparent 0%),
-        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);
+        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);  
     background-image: linear-gradient(top, #ddd, #ddd 60%, transparent 60%),
         linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
        linear-gradient(bottom, #ddd, #ddd 0%, transparent 0%),
-        linear-gradient(left, #ddd, #ddd 0%, transparent 0%);
+        linear-gradient(left, #ddd, #ddd 0%, transparent 0%);  
 }
 /* right   __   ddd */
 .doc_iBtm>div:after,.jct_iwd > div:nth-of-type(1):before,.doc_top>div:before{background-image: -webkit-linear-gradient(top, #ddd, #ddd 0%, transparent 0%),
         -webkit-linear-gradient(right, #ddd, #ddd 60%, transparent 60%),
         -webkit-linear-gradient(bottom, #ddd, #ddd 0%, transparent 0%),
-        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);
+        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);  
     background-image: linear-gradient(top, #ddd, #ddd 0%, transparent 0%),
         linear-gradient(right, #ddd, #ddd 60%, transparent 60%),
        linear-gradient(bottom, #ddd, #ddd 0%, transparent 0%),
@@ -69,7 +69,7 @@ body {
 .eq_item:before,.grjj_c:before,.hpl_box:after,.sqfy_item:before,.doc_item:after,.login_item:after{background-image: -webkit-linear-gradient(top, #ddd, #ddd 60%, transparent 60%),
         -webkit-linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
         -webkit-linear-gradient(bottom, #ddd, #ddd 60%, transparent 60%),
-        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);
+        -webkit-linear-gradient(left, #ddd, #ddd 0%, transparent 0%);  
     background-image: linear-gradient(top, #ddd, #ddd 60%, transparent 60%),
         linear-gradient(right, #ddd, #ddd 0%, transparent 0%),
        linear-gradient(bottom, #ddd, #ddd 60%, transparent 60%),
@@ -80,7 +80,7 @@ body {
 .rib_item >p:before{background-image: -webkit-linear-gradient(top, #5fc7bc, #5fc7bc 0%, transparent 0%),
         -webkit-linear-gradient(right, #5fc7bc, #5fc7bc 60%, transparent 60%),
         -webkit-linear-gradient(bottom, #5fc7bc, #5fc7bc 0%, transparent 0%),
-        -webkit-linear-gradient(left, #5fc7bc, #5fc7bc 0%, transparent 0%);
+        -webkit-linear-gradient(left, #5fc7bc, #5fc7bc 0%, transparent 0%);  
     background-image: linear-gradient(top, #5fc7bc, #5fc7bc 0%, transparent 0%),
         linear-gradient(right, #5fc7bc, #5fc7bc 60%, transparent 60%),
        linear-gradient(bottom, #5fc7bc, #5fc7bc 0%, transparent 0%),
@@ -90,7 +90,7 @@ body {
 .jl_top:before{background-image: -webkit-linear-gradient(top, #fff, #fff 0%, transparent 0%),
         -webkit-linear-gradient(right, #fff, #fff 0%, transparent 0%),
         -webkit-linear-gradient(bottom, #fff, #fff 60%, transparent 60%),
-        -webkit-linear-gradient(left, #fff, #fff 0%, transparent 0%);
+        -webkit-linear-gradient(left, #fff, #fff 0%, transparent 0%);  
     background-image: linear-gradient(top, #fff, #fff 0%, transparent 0%),
         linear-gradient(right, #fff, #fff 0%, transparent 0%),
        linear-gradient(bottom, #fff, #fff 60%, transparent 60%),
@@ -99,11 +99,11 @@ body {
 
 
 /*解决rem单位闪屏的bug*/
-html{font-size: 50px;}
-@media screen and (min-width:320px) {html{font-size: 50px;}}
-@media screen and (min-width:360px) {html{font-size: 56.2px;}}
-@media screen and (min-width:375px) {html{font-size: 58.5px;}}
-@media screen and (min-width:414px) {html{font-size: 64.6px;}}
+html{font-size:50px}
+@media screen and (min-width:320px){html{font-size:42.6px}}
+@media screen and (min-width:360px){html{font-size:48px}}
+@media screen and (min-width:375px){html{font-size:50px}}
+@media screen and (min-width:414px){html{font-size:55.2px}}
 
 .boosIc_c,.cale_btm>p,.xdsoft_mounthpicker em,.xdsoft_mounthpicker .rIc,.eq_cdata > p:before,.eq_sz em:after,.ljyy_box .yy_gz:before,.ljyy_box .yy_link:before,.hpl_topI.hpl_topI1:before,.hpl_topI.hpl_topI2:before,.yyys_l:before,.yyys_r:before,.yyys_tit em,.doc_iFy:before,.doc_iYy:before,.jct_iwd > div:after,.jrr_tt2 em.zdIc:before,.zcty p.cur:before,.forgetIc:after,.jc_ic,.jrdt_t i,.doc_itemL:after,.yydt_ttx:after,.jr_top em,.bzjl span:before,.log_top em,.login_footer .fIc:before,.doc_search > div:before{background: url(../images/icons.png) no-repeat;background-size:4rem auto;}
 .bg_gray{background: #f1f1f1;}
