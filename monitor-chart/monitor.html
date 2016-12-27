@@ -41,18 +41,25 @@
         <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('dataImg'));
             //X轴初始最大次数
-            var initXmax = 30;
+            var initXmax = 10;
             var initXmin = 0;
             function randomData(start) {
                 initTime++;
                 //value即温度
-                var value = getInstantData();
+                var value = getInstantData().toFixed(1);
                 return {
                     name: start,
                     value: [
                         start,
                         value
-                    ]
+                    ],
+                    itemStyle: {
+                        fontSize: 18,
+                        normal: {
+                            color: '#000',
+
+                        }
+                    }
                 }
             }
 
@@ -62,8 +69,17 @@
             // 指定图表的配置项和数据
             option = {
                 title: {
-                    text: '当前佩戴的口腔温度，采样频率：10秒',
-                    left: 'center'
+                    text: '当前佩戴的口腔温度',
+                    left: 'center',
+                    top: 5,
+                    subtext: '采样频率：5秒',
+                    subtextStyle: {
+                        color: '#ff0000'
+                    },
+                    textStyle: {
+                        color: '#fff',
+                        fontSize: 14
+                    }
                 },
                 tooltip: {
                     trigger: 'axis',
@@ -81,23 +97,36 @@
                     min: initXmin,
                     max: initXmax,
                     splitLine: {
-                        show: false
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed'
+                        }
                     }
                 },
                 yAxis: {
                     name: '温度',
                     type: 'value',
                     min: 0,
-                    max: 50,
+                    max: 40,
+                    interval: 5,
+                    minInterval: 1,
                     splitLine: {
-                        show: false
+                        show: true,
+                        lineStyle: {
+                            type: 'dashed'
+                        }
+                    },
+                    axisTick: {
+                        show: true,
+                        interval: 0
                     }
                 },
                 series: [{
                         name: '模拟数据',
                         type: 'line',
-                        showSymbol: false,
-                        hoverAnimation: false,
+                        showSymbol: true,
+                        hoverAnimation: true,
+                        color:'#000',
                         data: data
                     }]
             };
@@ -116,10 +145,17 @@
                         max: x_max
                     },
                     series: [{
+                          label: {
+                                color: '#fff',
+                                normal: {
+                                    show: true,
+                                    position: 'top',
+                                }
+                            },
                             data: data,
                         }]
                 });
-            }, 1000);
+            }, 5000);
 
             function getInstantData(){
                 var jsonData = YYM.getInstantData();
