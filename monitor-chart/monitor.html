@@ -46,12 +46,12 @@
             function randomData(start) {
                 initTime++;
                 //value即温度
-                var value = getInstantData().toFixed(1);
+                var values = getInstantData().toFixed(1);
                 return {
                     name: start,
                     value: [
                         start,
-                        value
+                        values
                     ],
                     itemStyle: {
                         fontSize: 18,
