@@ -46,7 +46,7 @@
             function randomData(start) {
                 initTime++;
                 //value即温度
-                var values = getInstantData().toFixed(1);
+                var values = parseFloat(getInstantData()).toFixed(1);
                 return {
                     name: start,
                     value: [
@@ -163,7 +163,7 @@
                 return obj.temperature;
             }
             window.onload=function(){
-               YYM.hiddenTabBar();
+              YYM.hiddenTabBar();
             }
         </script>
     </body>
