@@ -44,68 +44,73 @@
 <script src="../js/monitor.js?version=20170101"></script>
 <script src="../js/config.js?version=20170101"></script>
 <script type="text/javascript">
-window.onload = function(){
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  var W = canvas.width;
-  var H = canvas.height;
-  var deg=0,new_deg=0,dif=0;
-  var loop,re_loop;
-  var text,text_w;
 
-  function init(){
-    ctx.clearRect(0,0,W,H);
-    ctx.beginPath();
-    ctx.strokeStyle="#ccc";
-    ctx.lineWidth=3;
-    ctx.arc(W/2,H/2,26,0,Math.PI*2,false);
-    ctx.stroke();
+   sh = setInterval(function () {
+        checkIsBinding();
+    }, 1);
 
-    var r = deg*Math.PI/180;
-    ctx.beginPath();
-    ctx.strokeStyle = "#5fc7bb";
-    ctx.lineWidth=3;
-    ctx.arc(W/2,H/2,26,0-40*Math.PI/180,r-40*Math.PI/180,false);
-    ctx.stroke();
-
-    ctx.fillStyle="#888";
-    ctx.font="14px '微软雅黑'";
-    ctx.textBaseline="middle";
-    text = Math.floor(deg/360*100)+"%";
-    text_w = ctx.measureText(text).width;
-    ctx.fillText(text,W/2 - text_w/2,H/2);
-  }
-  function draw(){
-    var percent=0;
-    new_deg = Math.round(percent*360*1000)/1000;
-    dif = new_deg-deg;
-    loop = setInterval(to,1000/dif);
-  }
-  function to(){
-    if(deg == new_deg){
-      clearInterval(loop);
-    }
-    if(deg<new_deg){
-      deg++;
-    }
-    init();
-  }
-  //判断是否需要登录
-    if(!checkLogin()) {
-        showLogin();
-    }
-    isBinding();
-    draw();
-  re_loop = setInterval(draw,2000);
-
-  $("#connect").on("click", function (){
-       if (checkLogin()) {
-           getConnectBlueDevice();
-       } else {
-           showLogin();
-       }
-  })
-}
+//window.onload = function(){
+//  var canvas = document.getElementById("canvas");
+//  var ctx = canvas.getContext("2d");
+//  var W = canvas.width;
+//  var H = canvas.height;
+//  var deg=0,new_deg=0,dif=0;
+//  var loop,re_loop;
+//  var text,text_w;
+//
+//  function init(){
+//    ctx.clearRect(0,0,W,H);
+//    ctx.beginPath();
+//    ctx.strokeStyle="#ccc";
+//    ctx.lineWidth=3;
+//    ctx.arc(W/2,H/2,26,0,Math.PI*2,false);
+//    ctx.stroke();
+//
+//    var r = deg*Math.PI/180;
+//    ctx.beginPath();
+//    ctx.strokeStyle = "#5fc7bb";
+//    ctx.lineWidth=3;
+//    ctx.arc(W/2,H/2,26,0-40*Math.PI/180,r-40*Math.PI/180,false);
+//    ctx.stroke();
+//
+//    ctx.fillStyle="#888";
+//    ctx.font="14px '微软雅黑'";
+//    ctx.textBaseline="middle";
+//    text = Math.floor(deg/360*100)+"%";
+//    text_w = ctx.measureText(text).width;
+//    ctx.fillText(text,W/2 - text_w/2,H/2);
+//  }
+//  function draw(){
+//    var percent=0;
+//    new_deg = Math.round(percent*360*1000)/1000;
+//    dif = new_deg-deg;
+//    loop = setInterval(to,1000/dif);
+//  }
+//  function to(){
+//    if(deg == new_deg){
+//      clearInterval(loop);
+//    }
+//    if(deg<new_deg){
+//      deg++;
+//    }
+//    init();
+//  }
+//  //判断是否需要登录
+//    if(!checkLogin()) {
+//        showLogin();
+//    }
+//    checkIsBinding();
+//    draw();
+//  re_loop = setInterval(draw,2000);
+//
+//  $("#connect").on("click", function (){
+//       if (checkLogin()) {
+//           getConnectBlueDevice();
+//       } else {
+//           showLogin();
+//       }
+//  })
+//}
 
 </script>
 </body>

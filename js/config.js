@@ -1,12 +1,12 @@
 /**
  * Created by Kevin on 1/1/17.
  */
-var base_url = '/monitor2/';
+var base_url = '/monitor/';
 /**
  * 今日动态
  * @type {string}
  */
-var today_monitor = base_url + "monitor-chart/monitor.html";
+var today_monitor = base_url + "monitor-chart/monitor.html?t="+(new Date());
 function todayMonitor() {
     window.location.href = today_monitor;
 }
@@ -14,7 +14,7 @@ function todayMonitor() {
  * 首页
  * @type {string}
  */
-var shou_ye = base_url + "monitor/index.html";
+var shou_ye = base_url + "monitor/index.html?t="+(new Date());
 function shouYe() {
     window.location.href = shou_ye;
 }

@@ -31,7 +31,7 @@ function getConnectBlueDevice() {
 /**
  * 判断蓝牙设备是否连接
  */
-function isBinding() {
+function checkIsBinding() {
     var status = YYM.isBinding();
     changeButtonStatus(status);
 }
@@ -45,6 +45,8 @@ function changeButtonStatus(status)
     if (status == 1) {
         $("#yydt_t2").text("已绑定蓝牙设备");
         $(".boosIc_c").remove();
+        //清楚定时器
+        clearInterval(sh);
     } else {
         $("#yydt_t2").text("未绑定蓝牙设备");
     }
