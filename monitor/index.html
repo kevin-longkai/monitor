@@ -5,8 +5,8 @@
 <title>监测</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <meta content="telephone=no" name="format-detection" />
-<link rel="stylesheet" type="text/css" href="../css/base.css?version=20161226" />
-<link rel="stylesheet" type="text/css" href="../css/demo.css?version=20161226" />
+<link rel="stylesheet" type="text/css" href="../css/base.css?version=20170101" />
+<link rel="stylesheet" type="text/css" href="../css/demo.css?version=20170101" />
 </head>
 <body ontouchstart="">
 <section id="container" class="viewport jc_box bg2">
@@ -32,16 +32,16 @@
     <p class="mc_jl">坚持记录，保障牙齿健康</p>
   </section>
   <footer class="btm_nav">
-    <a href="/monitor/index.html" class="m1 cur">首页</a>
-    <a href="/monitor-chart/index.html" class="m2">易牙美</a>
+    <a href="/monitor/monitor-chart/bind-after.html" style="z-index: 30" class="m1 cur">首页</a>
+    <a href="/monitor/monitor-chart/monitor.html" class="m2">易牙美</a>
     <a href="#" class="m3">日历</a>
     <a href="#" class="m4">我的</a>
   </footer>
 </section>
-<script src="../js/zepto.min.js?version=20161226" type="text/javascript" charset="utf-8"></script>
-<script src="../js/rem_750_100_min.js?version=20161226" type="text/javascript" charset="utf-8"></script>
-<script src="../js/jquery_last.js?version=20161226"></script>
-<script src="../js/monitor.js?version=20161226"></script>
+<script src="../js/zepto.min.js?version=20170101" type="text/javascript" charset="utf-8"></script>
+<script src="../js/rem_750_100_min.js?version=20170101" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery_last.js?version=20170101"></script>
+<script src="../js/monitor.js?version=20170101"></script>
 <script type="text/javascript">
 window.onload = function(){
   var canvas = document.getElementById("canvas");
@@ -89,18 +89,26 @@ window.onload = function(){
     }
     init();
   }
+  checkTokenShowLogin();
   draw();
   re_loop = setInterval(draw,2000);
 
   $("#connect").on("click", function (){
        getConnectBlueDevice();
   })
-  //显示按钮
-  YYM.showTabBar();
 }
+
+var YYM = obj;
 
 function getConnectBlueDevice() {
    YYM.connectBluetooth();
+}
+
+function checkTokenShowLogin() {
+    var token = obj.getToken();
+    if (token == '') {
+        obj.showLogin();
+    }
 }
 
 function changeButtonStatus(status)
