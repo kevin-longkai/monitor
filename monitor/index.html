@@ -89,6 +89,7 @@ window.onload = function(){
     }
     init();
   }
+  //判断是否需要登录
   checkTokenShowLogin();
   draw();
   re_loop = setInterval(draw,2000);
@@ -98,28 +99,6 @@ window.onload = function(){
   })
 }
 
-var YYM = obj;
-
-function getConnectBlueDevice() {
-   YYM.connectBluetooth();
-}
-
-function checkTokenShowLogin() {
-    var token = obj.getToken();
-    if (token == '') {
-        obj.showLogin();
-    }
-}
-
-function changeButtonStatus(status)
-{
-  if (status == 1) {
-   $("#yydt_t2").text("已绑定蓝牙设备");
-   $(".boosIc_c").remove();
-  } else {
-    $("#yydt_t2").text("绑定失败");
-  }
-}
 </script>
 </body>
 </html>
