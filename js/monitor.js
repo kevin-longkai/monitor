@@ -4,10 +4,9 @@
  * @constructor
  */
 function showLogin() {
-    if (!checkLogin()) {
-        YYM.showLogin();
-    }
+    YYM.showLogin();
 }
+
 /**
  * 检查是否有登录态
  *
