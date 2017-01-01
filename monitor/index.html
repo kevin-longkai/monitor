@@ -90,12 +90,16 @@ window.onload = function(){
     init();
   }
   //判断是否需要登录
-  checkTokenShowLogin();
+    showLogin();
   draw();
   re_loop = setInterval(draw,2000);
 
   $("#connect").on("click", function (){
-       getConnectBlueDevice();
+       if (checkLogin()) {
+           getConnectBlueDevice();
+       } else {
+           showLogin();
+       }
   })
 }
 
