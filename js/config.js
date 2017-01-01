@@ -1,11 +1,12 @@
 /**
  * Created by Kevin on 1/1/17.
  */
+var base_url = '/monitor2/';
 /**
  * 今日动态
  * @type {string}
  */
-var today_monitor = "/monitor/monitor-chart/monitor.html";
+var today_monitor = base_url + "monitor-chart/monitor.html";
 function todayMonitor() {
     window.location.href = today_monitor;
 }
@@ -13,7 +14,7 @@ function todayMonitor() {
  * 首页
  * @type {string}
  */
-var shou_ye = "/monitor/monitor/index.html";
+var shou_ye = base_url + "monitor/index.html";
 function shouYe() {
     window.location.href = shou_ye;
 }
@@ -22,12 +23,12 @@ function shouYe() {
  * 易牙美
  * @type {string}
  */
-var yi_ya_mei = "/monitor/monitor-chart/monitor.html";
+var yi_ya_mei = base_url + "monitor-chart/monitor.html";
 function yiYaMei() {
     window.location.href = yi_ya_mei;
 }
 
-var ask_doctor = "/monitor/doctors/list.html";
+var ask_doctor = base_url + "doctors/list.html";
 
 function askDoctor() {
     window.location.href = ask_doctor;
