@@ -1,7 +1,7 @@
 /**
  * Created by Kevin on 1/1/17.
  */
-var base_url = '/monitor/';
+var base_url = '/monitor2/';
 /**
  * 今日动态
  * @type {string}
