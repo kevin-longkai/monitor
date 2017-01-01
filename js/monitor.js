@@ -42,3 +42,12 @@ function changeButtonStatus(status)
         $("#yydt_t2").text("绑定失败");
     }
 }
+/**
+ * 获取数据渲染图标
+ * @returns {*}
+ */
+function getInstantData(){
+    var jsonData = YYM.getInstantData();
+    var obj = new Function("return" + jsonData)();
+    return obj.temperature;
+}

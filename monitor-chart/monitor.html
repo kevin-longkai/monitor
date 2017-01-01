@@ -81,7 +81,7 @@
                     text: '当前佩戴的口腔温度',
                     left: 'center',
                     top: 5,
-                    subtext: '采样频率：10秒',
+                    subtext: '采样频率：5秒',
                     subtextStyle: {
                         color: '#fff',
                         fontWeight: 'bold'
@@ -207,15 +207,6 @@
                         }]
                 });
             }, 5000);
-
-            function getInstantData(){
-                var jsonData = YYM.getInstantData();
-                var obj = new Function("return" + jsonData)();
-                return obj.temperature;
-            }
-            window.onload=function(){
-              YYM.hiddenTabBar();
-            }
         </script>
     </body>
 </html>
