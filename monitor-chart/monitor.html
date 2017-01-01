@@ -28,7 +28,7 @@
                         <p class="jcTT">解读曲线</p>
                         <p>公立医院医生快速解答</p>
                     </div>
-                    <div onclick="location='/monitor/doctors/list.html'">
+                    <div onclick="javascript:askDoctor()">
                         <p class="jcTT">咨询医生</p>
                         <p>1元钱，名医任你挑选</p>
                     </div>
@@ -36,14 +36,16 @@
             </div>
         </section>
         <footer class="btm_nav">
-            <a href="/monitor/monitor/index.html" class="m1">首页</a>
-            <a href="/monitor/monitor-chart/monitor.html" class="m2 cur">易牙美</a>
+            <a href="javascript:shouYe()" class="m1">首页</a>
+            <a href="javascript:yiyYaei()" class="m2 cur">易牙美</a>
             <a href="#" class="m3">日历</a>
             <a href="#" class="m4">我的</a>
         </footer>
         <script src="../js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/rem_750_100_min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../js/monitor.js?version=20170101"></script>
+        <script src="../js/config.js?version=20170101"></script>
         <script type="text/javascript">
             var myChart = echarts.init(document.getElementById('dataImg'));
             //X轴初始最大次数

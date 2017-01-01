@@ -21,7 +21,7 @@ body {
 }
 .clearBth{ clear:both; overflow:hidden; height:0; font-size:0; line-height:0;}
 
-.btm_nav:before,.xdsoft_datetimepicker  .xdsoft_mounthpicker:before,.eq_cdata > p:after,.eq_item:before,.grjj_c>div h2:after,.eq_cdata h2:after,.grjj_c:before,.hpl_top:before,.hpl_box:after,.sqfy_in:before,.sqfy_item:before,.doc_iBtm>div:after,.doc_iBtm:after,.doc_item:after,.jct_iwd > div:nth-of-type(1):before,.mcjcrw:after,.mc_jl:after,.jr_top:after,.rib_item >p:before,.jl_top:before,.log_top:after,.forget_box:after,.login_item:after,.login_in:after,.doc_top:before,.doc_top>div:before{
+.xdsoft_datetimepicker  .xdsoft_mounthpicker:before,.eq_cdata > p:after,.eq_item:before,.grjj_c>div h2:after,.eq_cdata h2:after,.grjj_c:before,.hpl_top:before,.hpl_box:after,.sqfy_in:before,.sqfy_item:before,.doc_iBtm>div:after,.doc_iBtm:after,.doc_item:after,.jct_iwd > div:nth-of-type(1):before,.mcjcrw:after,.mc_jl:after,.jr_top:after,.rib_item >p:before,.jl_top:before,.log_top:after,.forget_box:after,.login_item:after,.login_in:after,.doc_top:before,.doc_top>div:before{
     content: '';
     position: absolute;
     top: 0;
@@ -398,7 +398,7 @@ background: -webkit-linear-gradient(left , #43c1c0 1% , #00777b 100%);
 
 /*底部导航*/
 .bg_menu{padding-bottom: 1.1rem;}
-.btm_nav{height: .98rem;background: #f9f9f9;position: relative;width: 100%;position: fixed;bottom: 0;left: 0;z-index: 20;}
+.btm_nav{height: .98rem;background: #f9f9f9;position: relative;width: 100%;position: fixed;bottom: 0;left: 0;z-index: 20;border-top:1px solid #ccc}
 .btm_nav >a{width: 25%;float: left;margin-top: .14rem;font-size: .2rem;color: #777;line-height: 1;text-align: center;}
 .btm_nav >a:before{display: block;content: "";margin: 0 auto .1rem auto;}
 .btm_nav >a.cur{color: #5fc7bb;}

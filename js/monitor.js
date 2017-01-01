@@ -22,10 +22,17 @@ function checkLogin() {
     return flag;
 }
 
+/**
+ *连接蓝牙设备
+ */
 function getConnectBlueDevice() {
     YYM.connectBluetooth();
 }
-//判断设备是否连接
+/**
+ * 判断设备是否连接
+ *
+ * @param status
+ */
 function changeButtonStatus(status)
 {
     if (status == 1) {
