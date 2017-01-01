@@ -75,14 +75,16 @@
             var initTime = 0
 
             // 指定图表的配置项和数据
+            // 指定图表的配置项和数据
             option = {
                 title: {
                     text: '当前佩戴的口腔温度',
                     left: 'center',
                     top: 5,
-                    subtext: '采样频率：5秒',
+                    subtext: '采样频率：10秒',
                     subtextStyle: {
-                        color: '#ff0000'
+                        color: '#fff',
+                        fontWeight: 'bold'
                     },
                     textStyle: {
                         color: '#fff',
@@ -99,29 +101,52 @@
                         animation: true
                     }
                 },
+                grid:{
+                    height:230
+                },
                 xAxis: {
                     name: '次',
+                    nameTextStyle: {
+                        fontWeight: 'bold'
+                    },
                     type: 'value',
                     min: initXmin,
                     max: initXmax,
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff',
+                        }
+                    },
                     splitLine: {
                         show: true,
                         lineStyle: {
-                            type: 'dashed'
+                            type: 'dashed',
+                            width: 1,
+                            opacity: 0.7
                         }
                     }
                 },
                 yAxis: {
-                    name: '温度',
+                    name: '温度℃',
+                    nameTextStyle: {
+                        fontWeight: 'bold'
+                    },
                     type: 'value',
                     min: 0,
-                    max: 40,
+                    max: 50,
                     interval: 5,
                     minInterval: 1,
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff',
+                        }
+                    },
                     splitLine: {
                         show: true,
                         lineStyle: {
-                            type: 'dashed'
+                            type: 'dashed',
+                            width: 1,
+                            opacity: 0.7
                         }
                     },
                     axisTick: {
@@ -130,13 +155,31 @@
                     }
                 },
                 series: [{
-                        name: '模拟数据',
-                        type: 'line',
-                        showSymbol: true,
-                        hoverAnimation: true,
-                        color:'#000',
-                        data: data
-                    }]
+                    name: '模拟数据',
+                    type: 'line',
+                    showSymbol: false,
+                    hoverAnimation: true,
+                    itemStyle: {
+                        normal: {
+                            /*color: '#ff0000',
+                             label: {
+                             show: false,
+                             position: 'top',
+                             textStyle: {
+                             fontWeight: '100',
+                             fontSize: '12',
+                             color: '#ff0000'
+                             }
+                             },*/
+                            lineStyle: {
+                                color: '#f08080',
+                                width: 1
+                            }
+                        }
+                    },
+                    //areaStyle: {normal: {}},
+                    data: data
+                }]
             };
             myChart.setOption(option);
             //定时采样数据
