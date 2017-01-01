@@ -38,7 +38,7 @@ function changeButtonStatus(status)
         $("#yydt_t2").text("已绑定蓝牙设备");
         $(".boosIc_c").remove();
     } else {
-        $("#yydt_t2").text("绑定失败");
+        $("#yydt_t2").text("未绑定蓝牙设备");
     }
 }
 /**
