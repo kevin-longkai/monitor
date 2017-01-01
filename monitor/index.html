@@ -47,7 +47,7 @@
 sh = setInterval(function () {
     checkIsBinding();
 }, 1);
-window.onload = function(){
+$(function () {
   var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
   var W = canvas.width;
@@ -113,7 +113,7 @@ window.onload = function(){
            showLogin();
        }
   })
-}
+})
 
 </script>
 </body>
