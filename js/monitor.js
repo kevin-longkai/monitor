@@ -15,7 +15,7 @@ function showLogin() {
 function checkLogin() {
     var flag = true;
     var token = YYM.getToken();
-    if (token !== null || token !== undefined || token !== '') {
+    if (token == null || token == undefined || token == '') {
         flag = false;
     }
     return flag;
