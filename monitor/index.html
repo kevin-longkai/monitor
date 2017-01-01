@@ -96,6 +96,11 @@ window.onload = function(){
   //判断是否需要登录
     if(!checkLogin()) {
         showLogin();
+    } else {
+        if (!returnBing()) {
+            //调用蓝牙设备
+            getConnectBlueDevice();
+        }
     }
     checkIsBinding();
     draw();
