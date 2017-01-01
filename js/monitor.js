@@ -27,6 +27,14 @@ function checkLogin() {
 function getConnectBlueDevice() {
     YYM.connectBluetooth();
 }
+
+/**
+ * 判断蓝牙设备是否连接
+ */
+function isBinding() {
+    var status = YYM.isBinding();
+    changeButtonStatus(status);
+}
 /**
  * 判断设备是否连接
  *
